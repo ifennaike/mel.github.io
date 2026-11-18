@@ -21,7 +21,8 @@ export default function CinematicSite() {
 		if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 			const lenis = new Lenis({ duration: 1.05, smoothWheel: true });
 			lenis.on("scroll", ScrollTrigger.update);
-			gsap.ticker.add((time) => lenis.raf(time * 1000));
+			const updateLenis = (time: number) => lenis.raf(time * 1000);
+			gsap.ticker.add(updateLenis);
 			gsap.ticker.lagSmoothing(0);
 
 			const ctx = gsap.context(() => {
@@ -72,10 +73,8 @@ export default function CinematicSite() {
 					.timeline({
 						scrollTrigger: {
 							trigger: ".explore",
-							start: "top top",
-							end: "+=220%",
-							scrub: 1,
-							pin: true,
+							start: "top bottom",
+							once: true,
 						},
 					})
 					.to(".explore", { backgroundColor: "#7C3AED" }, 0)
@@ -84,16 +83,15 @@ export default function CinematicSite() {
 					.to(".game-object", { scale: 1.25, rotate: 20, x: 180 }, 0.5)
 					.from(".game-label", { opacity: 0, y: 30, stagger: 0.12 }, 0.42)
 					.to(".explore-title", { x: -300, opacity: 0.12 }, 0.82)
-					.to(".game-object", { scale: 0.25, x: 520, y: -300, rotate: 180 }, 0.82);
+					.to(".game-object", { scale: 0.25, x: 520, y: -300, rotate: 180 }, 0.82)
+					.timeScale(0.5);
 
 				gsap
 					.timeline({
 						scrollTrigger: {
 							trigger: ".interactive",
-							start: "top top",
-							end: "+=180%",
-							scrub: 1,
-							pin: true,
+							start: "top bottom",
+							once: true,
 						},
 					})
 					.from(".interactive-heading", { y: 100, rotate: 4, opacity: 0 }, 0)
@@ -104,22 +102,22 @@ export default function CinematicSite() {
 					)
 					.to(".memory-card:nth-child(1)", { y: -35, rotate: -7, scale: 1.08 }, 0.55)
 					.to(".memory-card:nth-child(2)", { y: 35, rotate: 7, scale: 1.08 }, 0.65)
-					.to(".memory-card:nth-child(3)", { y: -15, rotate: -3, scale: 1.08 }, 0.75);
+					.to(".memory-card:nth-child(3)", { y: -15, rotate: -3, scale: 1.08 }, 0.75)
+					.timeScale(0.5);
 
 				gsap
 					.timeline({
 						scrollTrigger: {
 							trigger: ".wow",
-							start: "top top",
-							end: "+=180%",
-							scrub: 1,
-							pin: true,
+							start: "top bottom",
+							once: true,
 						},
 					})
 					.to(".wow-circle", { scale: 28 }, 0.12)
 					.to(".wow-copy", { y: -80, opacity: 0, scale: 0.75 }, 0.35)
 					.from(".wow-reveal", { opacity: 0, scale: 0.65, y: 120 }, 0.58)
-					.to(".wow-circle", { opacity: 0 }, 0.88);
+					.to(".wow-circle", { opacity: 0 }, 0.88)
+					.timeScale(0.5);
 
 				gsap
 					.timeline({
@@ -151,8 +149,7 @@ export default function CinematicSite() {
 			return () => {
 				ctx.revert();
 				lenis.destroy();
-				gsap.ticker.remove((time) => lenis.raf(time * 1000));
-				ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+				gsap.ticker.remove(updateLenis);
 			};
 		}
 

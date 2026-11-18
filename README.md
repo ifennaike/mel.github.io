@@ -1,6 +1,6 @@
 # Melvin & Co. — Make Curiosity Real
 
-A responsive, static-exported Next.js landing page for Melvin and his co-founder. It uses GSAP and Lenis for scroll-based motion, respects reduced-motion preferences, and includes the co-founders illustration.
+A responsive, static-exported Next.js landing page for Melvin and his co-founder. It uses GSAP and Lenis for motion: stages 2–4 play once when they enter the viewport, while the other animated sections remain scroll-controlled. The site respects reduced-motion preferences and includes the co-founders illustration.
 
 ## Run locally
 
