@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ee">
+  <meta name="description" content="Big ideas, playful games, and learning adventures — made by Melvin and his dad.">
+  <title>Melvin & Dad — Big Ideas, Brilliant Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#story">Skip to the story</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Melvin and Dad, home"><span class="brand-mark" aria-hidden="true">M<span>+</span></span><span>Melvin <i>&</i> Dad</span></a>
+    <a class="nav-idea" href="#ideas">Share an idea <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sparkle" aria-hidden="true">✳</span> A little project with big possibilities</p>
+        <h1 id="hero-title">Big ideas.<br><span>Brilliant</span> play.</h1>
+        <p class="hero-sub">A tiny corner of the internet where learning feels like an adventure.</p>
+        <a class="button button-dark" href="#story">Come on in <span aria-hidden="true">↓</span></a>
+        <div class="hero-note"><span class="note-dot"></span> Dreamed up by Melvin & his dad</div>
+      </div>
+      <div class="portrait-wrap" aria-label="Portrait placeholder for Melvin">
+        <div class="sun-disc"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="portrait-card">
+          <!-- Replace this illustration with a generated or family-approved portrait. See README.md. -->
+          <img src="assets/melvin-portrait-placeholder.svg" alt="Illustrated placeholder portrait. Replace with a generated or family-approved cartoon portrait of Melvin." width="560" height="640">
+          <span class="portrait-label">MEET THE CO-CREATOR</span>
+        </div>
+        <span class="sticker sticker-top" aria-hidden="true">MAKE<br>STUFF!</span>
+        <span class="sticker sticker-bottom" aria-hidden="true">★<br>PLAY<br>★</span>
+        <span class="float-star" aria-hidden="true">✦</span>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span></span>SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="story section-pad" id="story" aria-labelledby="story-title">
+      <div class="section-kicker"><span>01</span><span class="kicker-line"></span><span>THE BIG IDEA</span></div>
+      <div class="story-layout">
+        <h2 id="story-title">A space for<br><span>curious minds.</span></h2>
+        <div class="story-copy">
+          <p class="exact-message">I am trying to build something great with my dad, an interactive platform/space/games that will be educative, insitive and fun. Feel free to send your ideas.</p>
+          <p class="translation">In other words: a place to play, make discoveries, and dream up what comes next. Got a brilliant idea? We’d love to hear it.</p>
+          <a class="text-link" href="#ideas">I have an idea <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+      <div class="playful-strip" aria-hidden="true"><span>IMAGINE</span><b>✳</b><span>EXPLORE</span><b>✳</b><span>MAKE</span><b>✳</b><span>REPEAT</span></div>
+    </section>
+
+    <section class="ideas section-pad" id="ideas" aria-labelledby="ideas-title">
+      <div class="section-kicker light"><span>02</span><span class="kicker-line"></span><span>YOUR TURN</span></div>
+      <div class="ideas-layout">
+        <div class="ideas-intro">
+          <p class="eyebrow light-eyebrow">The idea lab <span aria-hidden="true">✳</span></p>
+          <h2 id="ideas-title">What should<br>we <em>make?</em></h2>
+          <p>Dream up a game, a challenge, a creature, or something totally new. All ideas start somewhere!</p>
+          <div class="privacy-note"><span aria-hidden="true">🛡️</span><p><strong>A note for grown-ups</strong><br>This page is a static website. Ideas are not posted publicly or stored here. An adult must set up and check a private inbox or form service before submissions can be sent.</p></div>
+        </div>
+        <form class="idea-form" id="idea-form">
+          <label for="name">What should we call you? <span>(first name or nickname)</span></label>
+          <input id="name" name="name" type="text" maxlength="30" autocomplete="nickname" placeholder="Your nickname" required>
+          <label for="idea">Your big idea <span>✦</span></label>
+          <textarea id="idea" name="idea" rows="5" maxlength="700" placeholder="A game where you..."></textarea>
+          <div class="form-bottom"><span class="char-count" id="char-count">0 / 700</span><button class="button button-yellow" type="submit">Send idea <span aria-hidden="true">↗</span></button></div>
+          <p class="form-status" id="form-status" aria-live="polite">Ask a grown-up to help you share an idea.</p>
+          <p class="form-hint">Please don’t include your address, school, phone number, or other private details.</p>
+        </form>
+      </div>
+      <div class="big-doodle" aria-hidden="true">✳</div>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#top"><span class="brand-mark">M<span>+</span></span><span>Melvin <i>&</i> Dad</span></a><p>Made with curiosity, teamwork & a little bit of magic.</p><a href="#top" class="back-top">Back to top ↑</a></footer>
+</body>
+</html>
