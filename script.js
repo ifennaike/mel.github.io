@@ -3,18 +3,50 @@
 const ADULT_EMAIL = "";
 
 const heroCopy = document.querySelector(".hero-copy");
+const portrait = document.querySelector(".portrait-card");
 let frameRequested = false;
 function fadeHeroOnScroll() {
-  if (!heroCopy || frameRequested) return;
+  if ((!heroCopy && !portrait) || frameRequested) return;
   frameRequested = true;
   requestAnimationFrame(() => {
     const fade = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.72)));
     heroCopy.style.opacity = String(1 - fade * 0.88);
     heroCopy.style.transform = `translateY(${fade * 24}px)`;
+    if (portrait) portrait.style.setProperty("--portrait-shift", `${fade * -38}px`);
     frameRequested = false;
   });
 }
 window.addEventListener("scroll", fadeHeroOnScroll, { passive: true });
+fadeHeroOnScroll();
+function updateProgress() {
+  const range = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = range > 0 ? (window.scrollY / range) * 100 : 0;
+  document.documentElement.style.setProperty("--page-progress", `${progress}%`);
+}
+window.addEventListener("scroll", updateProgress, { passive: true });
+window.addEventListener("resize", updateProgress);
+updateProgress();
+
+// Reveal each chapter and its contents as the reader arrives, while keeping
+// everything visible for browsers without IntersectionObserver.
+const revealTargets = document.querySelectorAll(".section-kicker, .story h2, .story-copy, .playful-strip, .ideas-intro, .idea-form, footer > *");
+revealTargets.forEach((item, index) => {
+  item.classList.add("scroll-reveal");
+  item.style.setProperty("--reveal-delay", `${(index % 3) * 90}ms`);
+});
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+  revealTargets.forEach((item) => revealObserver.observe(item));
+} else {
+  revealTargets.forEach((item) => item.classList.add("is-visible"));
+}
 
 const idea = document.querySelector("#idea");
 const counter = document.querySelector("#char-count");

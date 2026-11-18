@@ -1,16 +1,14 @@
 # Melvin & Dad — GitHub Pages site
 
-A responsive, accessible, static landing page for a child friendly ideas and games project. The Melvin portrait is an abstract placeholder and is not intended to depict him.
+A responsive, accessible, static landing page for a child friendly ideas and games project. The hero uses the supplied co-founders artwork at `assets/co-founders.png`. The page uses scroll reveals, a subtle portrait drift, a fading hero headline, and a reading progress rail. Motion respects the reduced-motion preference.
 
 ## Preview locally
 
 Open `index.html` in a browser. The page uses plain HTML, CSS and JavaScript; there is no build step or package installation.
 
-## Replace the portrait
+## Artwork
 
-1. Create or commission a cartoon portrait that Melvin and his parent/guardian are happy to use. A generated portrait should be reviewed by the family before publishing. Do not upload a private or identifying photo unless you have decided it is appropriate to publish.
-2. Save the approved image in `assets/`, for example `assets/melvin-cartoon.webp`.
-3. In `index.html`, change the portrait `<img>` `src` from `assets/melvin-portrait-placeholder.svg` to your new file, and update its alt text to describe the approved illustration.
+The supplied illustration is stored as `assets/co-founders.png` and displayed in the hero. To replace it, upload the chosen artwork into `assets/` and update the hero `<img>` source and alt text in `index.html`.
 
 ## Make the idea form work safely
 
