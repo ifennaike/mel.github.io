@@ -189,7 +189,7 @@ export default function CinematicSite() {
 				</h1>
 				<div className="hero-art">
 					<img
-						src="/co-founders.png"
+						src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/co-founders.png`}
 						alt="Illustration of Melvin and a co-founder surrounded by playful ideas"
 					/>
 				</div>

@@ -17,6 +17,6 @@ The idea button opens the visitor's email app addressed to `collegebaddest@gmail
 
 ## Publish with GitHub Pages
 
-The `master` branch is deployed automatically by `.github/workflows/deploy.yml`. In the repository's **Settings → Pages**, set the source to **GitHub Actions**. Each push builds the app as static files and deploys the contents of `out/`.
+The `master` branch is deployed automatically by `.github/workflows/deploy.yml` to [https://ifennaike.github.io/mel.github.io/](https://ifennaike.github.io/mel.github.io/). The workflow sets the project-site base path so Next.js assets and the illustration load from the repository URL. In the repository's **Settings → Pages**, set the source to **GitHub Actions**. Each push builds the app as static files and deploys the contents of `out/`.
 
 GitHub Pages is public by default. Only publish content and contact details that are intended to be public.
