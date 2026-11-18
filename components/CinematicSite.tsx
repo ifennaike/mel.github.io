@@ -333,7 +333,7 @@ export default function CinematicSite() {
 					Dream up a game, solve a strange problem, or invent something totally
 					new.
 				</p>
-				<a className="finale-cta" href="mailto:ideas@example.com?subject=A%20new%20idea">
+				<a className="finale-cta" href="mailto:collegebaddest@gmail.com?subject=A%20new%20idea">
 					<span>Share your idea</span>
 					<b>↗</b>
 				</a>
